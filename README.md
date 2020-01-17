@@ -6,7 +6,7 @@ test_connection
 
 <a href="https://github.com/robertdebock/ansible-role-test_connection/actions"><img src="https://github.com/robertdebock/ansible-role-test_connection/workflows/GitHub%20Action/badge.svg"/></a>
 
-Install and configure test_connection on your system.
+Test connection possibilities to your system.
 
 Example Playbook
 ----------------
@@ -57,11 +57,12 @@ After running this role, this playbook runs to verify that everything works, thi
         path: /tmp/become_succeeded.txt
       register: become_succeeded
 
-    - assert:
-      that:
-        - connection_failed.stat.exists
-        - wait_for_connection_succeeded.stat.exists
-        - become_succeeded.stat.exists
+    - name: check results
+      assert:
+        that:
+          - connection_failed.stat.exists
+          - wait_for_connection_succeeded.stat.exists
+          - become_succeeded.stat.exists
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.

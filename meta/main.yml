@@ -2,7 +2,7 @@
 galaxy_info:
   author: Robert de Bock
   role_name: test_connection
-  description: Install and configure test_connection on your system.
+  description: Test connection possibilities to your system.
   license: Apache-2.0
   company: none
   min_ansible_version: 2.7
