@@ -44,7 +44,7 @@ After running this role, this playbook runs to verify that everything works, thi
   tasks:
     - name: check if files exist
       stat:
-        path: /tmp/connection_failed.txt
+        path: /tmp/connection_succeeded.txt
       register: connection_failed
 
     - name: check if files exist
@@ -60,7 +60,7 @@ After running this role, this playbook runs to verify that everything works, thi
     - name: check results
       assert:
         that:
-          - connection_failed.stat.exists
+          - connection_succeeded.stat.exists
           - wait_for_connection_succeeded.stat.exists
           - become_succeeded.stat.exists
 ```
