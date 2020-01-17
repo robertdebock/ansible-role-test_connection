@@ -61,7 +61,7 @@ After running this role, this playbook runs to verify that everything works, thi
       assert:
         that:
           - connection_status.stat.exists
-          - wait_for_status.stat.exists
+          - wait_for_connection_status.stat.exists
           - become_status.stat.exists
 ```
 
