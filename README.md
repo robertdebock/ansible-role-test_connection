@@ -2,7 +2,7 @@ test_connection
 =========
 
 <img src="https://docs.ansible.com/ansible-tower/3.2.4/html_ja/installandreference/_static/images/logo_invert.png" width="10%" height="10%" alt="Ansible logo" align="right"/>
-<a href="https://travis-ci.org/robertdebock/ansible-role-test_connection"> <img src="https://travis-ci.org/robertdebock/ansible-role-test_connection.svg?branch=master" alt="Build status"/></a> <img src="https://img.shields.io/ansible/role/d/"/> <img src="https://img.shields.io/ansible/quality/"/>
+<a href="https://travis-ci.org/robertdebock/ansible-role-test_connection"> <img src="https://travis-ci.org/robertdebock/ansible-role-test_connection.svg?branch=master" alt="Build status"/></a> <img src="https://img.shields.io/ansible/role/d/45921"/> <img src="https://img.shields.io/ansible/quality/45921"/>
 
 <a href="https://github.com/robertdebock/ansible-role-test_connection/actions"><img src="https://github.com/robertdebock/ansible-role-test_connection/workflows/GitHub%20Action/badge.svg"/></a>
 
@@ -45,24 +45,24 @@ After running this role, this playbook runs to verify that everything works, thi
     - name: check if files exist
       stat:
         path: /tmp/connection_succeeded.txt
-      register: connection_failed
+      register: connection_status
 
     - name: check if files exist
       stat:
         path: /tmp/wait_for_connection_succeeded.txt
-      register: wait_for_connection_succeeded
+      register: wait_for_connection_status
 
     - name: check if files exist
       stat:
         path: /tmp/become_succeeded.txt
-      register: become_succeeded
+      register: become_status
 
     - name: check results
       assert:
         that:
-          - connection_succeeded.stat.exists
-          - wait_for_connection_succeeded.stat.exists
-          - become_succeeded.stat.exists
+          - connection_status.stat.exists
+          - wait_for_status.stat.exists
+          - become_status.stat.exists
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.

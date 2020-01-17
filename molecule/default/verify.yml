@@ -7,21 +7,21 @@
     - name: check if files exist
       stat:
         path: /tmp/connection_succeeded.txt
-      register: connection_failed
+      register: connection_status
 
     - name: check if files exist
       stat:
         path: /tmp/wait_for_connection_succeeded.txt
-      register: wait_for_connection_succeeded
+      register: wait_for_connection_status
 
     - name: check if files exist
       stat:
         path: /tmp/become_succeeded.txt
-      register: become_succeeded
+      register: become_status
 
     - name: check results
       assert:
         that:
-          - connection_succeeded.stat.exists
-          - wait_for_connection_succeeded.stat.exists
-          - become_succeeded.stat.exists
+          - connection_status.stat.exists
+          - wait_for_status.stat.exists
+          - become_status.stat.exists
