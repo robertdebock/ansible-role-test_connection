@@ -1,0 +1,27 @@
+---
+- name: Verify
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: check if files exist
+      stat:
+        path: /tmp/connection_failed.txt
+      register: connection_failed
+
+    - name: check if files exist
+      stat:
+        path: /tmp/wait_for_connection_succeeded.txt
+      register: wait_for_connection_succeeded
+
+    - name: check if files exist
+      stat:
+        path: /tmp/become_succeeded.txt
+      register: become_succeeded
+
+    - name: check results
+      assert:
+        that:
+          - connection_failed.stat.exists
+          - wait_for_connection_succeeded.stat.exists
+          - become_succeeded.stat.exists

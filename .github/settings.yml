@@ -1,0 +1,7 @@
+---
+#
+# Ansible managed
+#
+repository:
+  description: Install and configure test_connection on your system.
+  homepage: https://robertdebock.nl/
