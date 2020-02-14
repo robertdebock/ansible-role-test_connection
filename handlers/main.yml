@@ -1,8 +1,2 @@
 ---
 # handlers file for test_connection
-- name: restart test_connection
-  service:
-    name: "{{ test_connection_service }}"
-    state: restarted
-  when:
-    - ansible_virtualization_type != "docker"
