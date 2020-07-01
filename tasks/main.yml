@@ -1,5 +1,8 @@
 ---
 # tasks file for test_connection
+- name: include assert.yml
+  include_tasks: assert.yml
+
 - name: check if the ssh tcp port is open
   block:
     - name: wait for tcp port 22
