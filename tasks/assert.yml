@@ -4,12 +4,14 @@
     that:
       - test_connection_report_host is defined
       - test_connection_report_host | length > 0
+    quiet: yes
 
 - name: test if test_connection_report_directory is set correctly
   assert:
     that:
       - test_connection_report_directory is defined
       - test_connection_report_directory | length > 0
+    quiet: yes
 
 - name: test if test_connection_timeout is set correctly
   assert:
@@ -17,3 +19,4 @@
       - test_connection_timeout is defined
       - test_connection_timeout | int
       - test_connection_timeout | int >= 0
+    quiet: yes
