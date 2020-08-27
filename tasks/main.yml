@@ -17,6 +17,7 @@
         path: "{{ test_connection_report_directory }}/connection_succeeded.txt"
         line: "{{ ansible_ssh_host | default(ansible_host | default(inventory_hostname)) }}"
         create: yes
+        mode: "0644"
       delegate_to: "{{ test_connection_report_host }}"
   rescue:
     - name: save results
@@ -24,6 +25,7 @@
         path: "{{ test_connection_report_directory }}/connection_failed.txt"
         line: "{{ ansible_ssh_host | default(ansible_host | default(inventory_hostname)) }}"
         create: yes
+        mode: "0644"
       delegate_to: "{{ test_connection_report_host }}"
 
 - name: check if a user can login
@@ -35,6 +37,7 @@
         path: "{{ test_connection_report_directory }}/wait_for_connection_succeeded.txt"
         line: "{{ ansible_ssh_host | default(ansible_host | default(inventory_hostname)) }}"
         create: yes
+        mode: "0644"
       delegate_to: "{{ test_connection_report_host }}"
   rescue:
     - name: save results
@@ -42,6 +45,7 @@
         path: "{{ test_connection_report_directory }}/wait_for_connection_failed.txt"
         line: "{{ ansible_ssh_host | default(ansible_host | default(inventory_hostname)) }}"
         create: yes
+        mode: "0644"
       delegate_to: "{{ test_connection_report_host }}"
 
 - name: check if become works
@@ -55,6 +59,7 @@
         path: "{{ test_connection_report_directory }}/become_succeeded.txt"
         line: "{{ ansible_ssh_host | default(ansible_host | default(inventory_hostname)) }}"
         create: yes
+        mode: "0644"
       delegate_to: "{{ test_connection_report_host }}"
   rescue:
     - name: save results
@@ -62,4 +67,5 @@
         path: "{{ test_connection_report_directory }}/become_failed.txt"
         line: "{{ ansible_ssh_host | default(ansible_host | default(inventory_hostname)) }}"
         create: yes
+        mode: "0644"
       delegate_to: "{{ test_connection_report_host }}"
