@@ -19,7 +19,7 @@ This example is taken from `molecule/resources/converge.yml` and is tested on ea
     - role: robertdebock.test_connection
 ```
 
-The machine may need to be prepared using `molecule/resources/prepare.yml`:
+The machine needs to be prepared in CI this is done using `molecule/resources/prepare.yml`:
 ```yaml
 ---
 - name: prepare
@@ -29,31 +29,6 @@ The machine may need to be prepared using `molecule/resources/prepare.yml`:
 
   roles:
     - role: robertdebock.bootstrap
-```
-
-For verification `molecule/resources/verify.yml` runs after the role has been applied.
-```yaml
----
-- name: Verify
-  hosts: localhost
-  gather_facts: no
-
-  tasks:
-    - name: check if files exist
-      stat:
-        path: /tmp/wait_for_connection_succeeded.txt
-      register: wait_for_connection_status
-
-    - name: check if files exist
-      stat:
-        path: /tmp/become_succeeded.txt
-      register: become_status
-
-    - name: check results
-      assert:
-        that:
-          - wait_for_connection_status.stat.exists
-          - become_status.stat.exists
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -80,13 +55,11 @@ test_connection_timeout: 5
 - Access to a repository containing packages, likely on the internet.
 - A recent version of Ansible. (Tests run on the current, previous and next release of Ansible.)
 
-The following roles can be installed to ensure all requirements are met, using `ansible-galaxy install -r requirements.yml`:
+## [Status of requirements](#status-of-requirements)
 
-```yaml
----
-- robertdebock.bootstrap
-
-```
+| Requirement | Travis | GitHub |
+|-------------|--------|--------|
+| [robertdebock.bootstrap](https://galaxy.ansible.com/robertdebock/bootstrap) | [![Build Status Travis](https://travis-ci.com/robertdebock/ansible-role-bootstrap.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-bootstrap) | [![Build Status GitHub](https://github.com/robertdebock/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-bootstrap/actions) |
 
 ## [Context](#context)
 
