@@ -17,6 +17,6 @@
   assert:
     that:
       - test_connection_timeout is defined
-      - test_connection_timeout | int
+      - test_connection_timeout is number
       - test_connection_timeout | int >= 0
     quiet: yes
