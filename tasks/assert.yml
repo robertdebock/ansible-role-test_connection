@@ -16,5 +16,5 @@
     that:
       - test_connection_timeout is defined
       - test_connection_timeout is number
-      - test_connection_timeout | int >= 0
+      - test_connection_timeout >= 0
     quiet: yes
