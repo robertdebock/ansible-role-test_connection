@@ -8,14 +8,12 @@
       stat:
         path: /tmp/wait_for_connection_succeeded.txt
       register: wait_for_connection_status
+      failed_when:
+        - not wait_for_connection_status.stat.exists
 
     - name: check if files exist
       stat:
         path: /tmp/become_succeeded.txt
       register: become_status
-
-    - name: check results
-      assert:
-        that:
-          - wait_for_connection_status.stat.exists
-          - become_status.stat.exists
+      failed_when:
+        - not become_status.stat.exists
