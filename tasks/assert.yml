@@ -1,4 +1,5 @@
 ---
+
 - name: test if test_connection_report_host is set correctly
   assert:
     that:
