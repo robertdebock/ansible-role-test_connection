@@ -2,9 +2,9 @@
 
 Test connection possibilities to your system.
 
-|Travis|GitHub|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-test_connection.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-test_connection)|[![github](https://github.com/robertdebock/ansible-role-test_connection/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-test_connection/actions)|[![quality](https://img.shields.io/ansible/quality/45921)](https://galaxy.ansible.com/robertdebock/test_connection)|[![downloads](https://img.shields.io/ansible/role/d/45921)](https://galaxy.ansible.com/robertdebock/test_connection)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-test_connection.svg)](https://github.com/robertdebock/ansible-role-test_connection/releases/)|
+|Travis|GitHub|GitLab|Quality|Downloads|Version|
+|------|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-test_connection.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-test_connection)|[![github](https://github.com/robertdebock/ansible-role-test_connection/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-test_connection/actions)|[![gitlab](https://gitlab.com/robertdebock/ansible-role-test_connection/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-test_connection)|[![quality](https://img.shields.io/ansible/quality/45921)](https://galaxy.ansible.com/robertdebock/test_connection)|[![downloads](https://img.shields.io/ansible/role/d/45921)](https://galaxy.ansible.com/robertdebock/test_connection)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-test_connection.svg)](https://github.com/robertdebock/ansible-role-test_connection/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -52,10 +52,11 @@ test_connection_timeout: 5
 
 ## [Requirements](#requirements)
 
-- Access to a repository containing packages, likely on the internet.
-- A recent version of Ansible. (Tests run on the current, previous and next release of Ansible.)
+- pip packages listed in [requirements.txt](https://github.com/robertdebock/ansible-role-test_connection/blob/master/requirements.txt).
 
 ## [Status of requirements](#status-of-requirements)
+
+The following roles are used to prepare a system. You may choose to prepare your system in another way, I have tested these roles as well.
 
 | Requirement | Travis | GitHub |
 |-------------|--------|--------|
