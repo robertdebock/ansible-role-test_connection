@@ -9,14 +9,14 @@
 - name: check if the ssh tcp port is open
   block:
     - name: wait for tcp port 22
-      wait_for:
+      ansible.builtin.wait_for:
         port: 22
         host: "{{ ansible_ssh_host | default(ansible_host | default(inventory_hostname)) }}"
         connect_timeout: "{{ test_connection_timeout }}"
         timeout: "{{ test_connection_timeout }}"
       delegate_to: "{{ test_connection_report_host }}"
     - name: save results
-      lineinfile:
+      ansible.builtin.lineinfile:
         path: "{{ test_connection_report_directory }}/connection_succeeded.txt"
         line: "{{ ansible_ssh_host | default(ansible_host | default(inventory_hostname)) }}"
         create: yes
@@ -24,7 +24,7 @@
       delegate_to: "{{ test_connection_report_host }}"
   rescue:
     - name: save results
-      lineinfile:
+      ansible.builtin.lineinfile:
         path: "{{ test_connection_report_directory }}/connection_failed.txt"
         line: "{{ ansible_ssh_host | default(ansible_host | default(inventory_hostname)) }}"
         create: yes
@@ -34,9 +34,9 @@
 - name: check if a user can login
   block:
     - name: wait_for_connection
-      wait_for_connection:
+      ansible.builtin.wait_for_connection:
     - name: save results
-      lineinfile:
+      ansible.builtin.lineinfile:
         path: "{{ test_connection_report_directory }}/wait_for_connection_succeeded.txt"
         line: "{{ ansible_ssh_host | default(ansible_host | default(inventory_hostname)) }}"
         create: yes
@@ -44,7 +44,7 @@
       delegate_to: "{{ test_connection_report_host }}"
   rescue:
     - name: save results
-      lineinfile:
+      ansible.builtin.lineinfile:
         path: "{{ test_connection_report_directory }}/wait_for_connection_failed.txt"
         line: "{{ ansible_ssh_host | default(ansible_host | default(inventory_hostname)) }}"
         create: yes
@@ -54,11 +54,11 @@
 - name: check if become works
   block:
     - name: ping with become
-      ping:
+      ansible.builtin.ping:
       become: yes
       become_user: root
     - name: save results
-      lineinfile:
+      ansible.builtin.lineinfile:
         path: "{{ test_connection_report_directory }}/become_succeeded.txt"
         line: "{{ ansible_ssh_host | default(ansible_host | default(inventory_hostname)) }}"
         create: yes
@@ -66,7 +66,7 @@
       delegate_to: "{{ test_connection_report_host }}"
   rescue:
     - name: save results
-      lineinfile:
+      ansible.builtin.lineinfile:
         path: "{{ test_connection_report_directory }}/become_failed.txt"
         line: "{{ ansible_ssh_host | default(ansible_host | default(inventory_hostname)) }}"
         create: yes
