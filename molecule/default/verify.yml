@@ -4,14 +4,14 @@
   gather_facts: no
 
   tasks:
-    - name: check if files exist
+    - name: check if wait_for_connection_succeeded exist
       ansible.builtin.stat:
         path: /tmp/wait_for_connection_succeeded.txt
       register: wait_for_connection_status
       failed_when:
         - not wait_for_connection_status.stat.exists
 
-    - name: check if files exist
+    - name: check if become_succeeded exist
       ansible.builtin.stat:
         path: /tmp/become_succeeded.txt
       register: become_status
