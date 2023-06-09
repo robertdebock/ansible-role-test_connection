@@ -5,6 +5,7 @@
     that:
       - test_connection_report_host is defined
       - test_connection_report_host is string
+      - test_connection_report_host is not none
     quiet: yes
 
 - name: assert | Test if test_connection_report_directory is set correctly
@@ -12,6 +13,7 @@
     that:
       - test_connection_report_directory is defined
       - test_connection_report_directory is string
+      - test_connection_report_directory is not none
     quiet: yes
 
 - name: assert | Test if test_connection_timeout is set correctly
