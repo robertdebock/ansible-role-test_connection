@@ -2,9 +2,9 @@
 
 Test connection possibilities to your system.
 
-|GitHub|GitLab|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![github](https://github.com/robertdebock/ansible-role-test_connection/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-test_connection/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-test_connection/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-test_connection)|[![quality](https://img.shields.io/ansible/quality/45921)](https://galaxy.ansible.com/robertdebock/test_connection)|[![downloads](https://img.shields.io/ansible/role/d/45921)](https://galaxy.ansible.com/robertdebock/test_connection)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-test_connection.svg)](https://github.com/robertdebock/ansible-role-test_connection/releases/)|
+|GitHub|GitLab|Downloads|Version|
+|------|------|---------|-------|
+|[![github](https://github.com/robertdebock/ansible-role-test_connection/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-test_connection/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-test_connection/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-test_connection)|[![downloads](https://img.shields.io/ansible/role/d/24604)](https://galaxy.ansible.com/robertdebock/test_connection)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-test_connection.svg)](https://github.com/robertdebock/ansible-role-test_connection/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -92,7 +92,7 @@ The minimum version of Ansible required is 2.12, tests have been done to:
 - The current version.
 - The development version.
 
-If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-test_connection/issues)
+If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-test_connection/issues).
 
 ## [License](#license)
 
