@@ -1,5 +1,7 @@
 # [Ansible role test_connection](#test_connection)
 
+> THIS ROLE HAS BEEN ARCHIVED AS OF DEC 2023.
+
 Test connection possibilities to your system.
 
 |GitHub|GitLab|Downloads|Version|
